@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  Material Tabs with Lazy Loaded Routes
+</mat-toolbar>
+
+<nav mat-tab-nav-bar>
+  <a mat-tab-link *ngFor="let tabItem of tabs" [routerLink]="tabItem.route" routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive">
+    <mat-icon class="mr-8">{{tabItem.icon}}</mat-icon>
+    {{tabItem.label}}
+  </a>
+</nav>
+
+<router-outlet></router-outlet>
